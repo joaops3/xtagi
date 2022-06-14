@@ -1,0 +1,18 @@
+.form-container{display: flex;
+    justify-content: center;
+    align-items: center;;
+    
+    }
+    .main-flex{display: flex;
+        
+    }
+    
+    form.form-login{
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+.botao{
+    width: 50%;
+}

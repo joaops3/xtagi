@@ -1,0 +1,14 @@
+.container {
+  background: linear-gradient(120deg, #222, #666);
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 14px;
+  text-align: center;
+  color: #ccc;
+}

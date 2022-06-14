@@ -1,0 +1,118 @@
+.container {
+  width: auto;
+  height: 76vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 36px;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.valueToTransfer {
+  color: #444;
+  font-size: 16px;
+  width: 300px;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: 0;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  position: fixed;
+  color: #d4af37;
+  font-size: 16px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  background-color: #444;
+}
+
+.recipientInput {
+  width: 300px;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  outline: 0;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.recipientDataArea {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.recipientDataItem {
+  color: #666;
+  font-size: 14px;
+}
+
+.descArea {
+  margin-top: 20px;
+  width: 300px;
+  resize: none;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.btnData {
+  background-color: #ccc;
+  color: #444;
+  cursor: pointer;
+  padding: 7px;
+  margin: 10px auto;
+  border-radius: 10%;
+  border: 0;
+}
+
+.verifyData {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.verifyDataItem {
+  color: #666;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.confirmCheckBox {
+  font-size: 14px;
+  color: #444;
+  width: 300px;
+}
+
+.confirmInput {
+  margin-right: 5px;
+}
+
+.psw {
+  color: #444;
+  font-size: 16px;
+  width: 300px;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: 0;
+  margin-top: 20px;
+}
+
+.realizeTransfer {
+  background-color: #d4af37;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10%;
+  border: 0;
+}

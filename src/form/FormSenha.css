@@ -1,0 +1,24 @@
+.form-container{display: flex;
+justify-content: center;
+align-items: center;;
+
+}
+.main-flex{display: flex;
+    
+}
+
+form.form-senha{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.botao{
+    display: flex;
+    justify-content: center;
+}
+
+div.senha-texto{
+    font-size: 1em;
+    color:  #222;
+}
