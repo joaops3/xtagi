@@ -29,16 +29,16 @@ export const Header = () => {
   return (
     <>
       <div className={header.container}>
-        <img src={Logo} className={header.logo} />
+       <Link to="/home"> <img src={Logo} className={header.logo} /></Link>
         <div onClick={ShowConfigFunction}>
           <BsPersonCircle className={header.personCircle} />
           <BsCaretDownFill className={header.caretDown} />
           {showConfig ? (
             <div className={header.ConfigArea}>
-              <Link to="/alterar"  target='_blank' className={header.ConfigAreaItem}>
+              <Link to="/alterar" className={header.ConfigAreaItem}>
                 Alteração de Dados.
               </Link>
-              <a href="#" onClick={() =>logout()} target='_blank' className={header.ConfigAreaItem}>
+              <a href="#" onClick={() =>logout()} className={header.ConfigAreaItem}>
                 Fazer Logout.
               </a>
               <a href='#' target='_blank' className={header.ConfigAreaItem}>

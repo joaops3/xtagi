@@ -65,6 +65,7 @@ const FormCadastro = () => {
     formState: { errors, dirtyFields },
     control,
   } = useForm({ resolver: yupResolver(schma) });
+  
   const [checado, setChecado] = useState(null);
 
   const checar = (e) => {

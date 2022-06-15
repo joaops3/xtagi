@@ -12,23 +12,15 @@ import { api } from "../../../hooks/Api";
 
 const schma = yup
   .object({
-    name: yup.string().required("Campo obrigatorio"),
     email: yup
       .string()
-      .email("Coloque um email valido")
-      .required("Campo obrigatorio"),
-    gender: yup.string("Campo obrigatorio").required("Campo obrigatorio"),
-    document_type: yup
-      .string("Campo obrigatorio")
-      .required("Campo obrigatorio"),
+      .email("Coloque um email valido"),
     document_number: yup
       .string()
-      .required("Campo obrigatorio")
       .matches(/^[0-9]+$/),
-    birth_date: yup.string().required("Campo obrigatorio"),
+    birth_date: yup.string(),
     password: yup
       .string()
-      .required("Campo obrigatorio")
       .min(6, "Minimo 6 caracteres")
       .max(8, "Max 8 digitos")
       .matches(
@@ -37,20 +29,17 @@ const schma = yup
       ),
     passwordConfirm: yup
       .string()
-      .required("Campo obrigatorio")
       .oneOf([yup.ref("password")], "As senhas devem ser iguais."),
 
-    street: yup.string().required("Campo obrigatorio"),
-    district: yup.string().required("Campo obrigatorio"),
+    street: yup.string(),
+    district: yup.string(),
     number: yup
       .string()
-      .required("Campo obrigatorio")
       .matches(/^[0-9]+$/, "Numero deve ser numerico"),
-    city: yup.string().required("Campo obrigatorio"),
-    estate: yup.string().required("Campo obrigatorio"),
+    city: yup.string(),
+    estate: yup.string(),
     cep: yup
       .string()
-      .required("Campo obrigatorio")
       .matches(
         /^([\d]{2})([\d]{3})([\d]{3})|^[\d]{2}.[\d]{3}-[\d]{3}/,
         "CEP invalido"
@@ -65,9 +54,11 @@ const schma = yup
   }
 
 const AlterarDados = () => {
+
     useEffect( ()=> {
         api.get("usuario")
     }, [])
+
     const {
         register,
         handleSubmit,
@@ -96,7 +87,7 @@ const AlterarDados = () => {
                     }
                   }
                   className="form-control"
-                  {...register("name")}
+                  value="joao"
                   type="text"
                   placeholder="Nome"
                   readOnly
@@ -154,7 +145,7 @@ const AlterarDados = () => {
                 <InputMask
                   mask="99/99/9999"
                   className="form-control"
-                  {...register("birth_date")}
+                
                   type="text"
                   placeholder="Nascimento DD/MM/YYYY"
                   readOnly

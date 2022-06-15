@@ -8,6 +8,7 @@ import FormCadastro from "./form/FormCadastro";
 import {Home} from "./UserPage/Pages/Home";
 import {TransferArea} from "../src/UserPage/Pages/TransferArea";
 import AlterarDados from "./UserPage/Pages/AlterarDados/AlterarDados";
+import Extrato from "./UserPage/Pages/Extrato/Extrato";
 
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
         ></Route>
         <Route path="/transfer" element={<TransferArea></TransferArea>}></Route>
         <Route path="/alterar" element={<AlterarDados></AlterarDados>}></Route>
+        <Route path="/extrato" element={<Extrato></Extrato>}></Route>
       </Routes>
     </BrowserRouter>
   );

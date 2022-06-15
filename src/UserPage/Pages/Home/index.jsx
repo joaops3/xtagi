@@ -21,13 +21,13 @@ export const Home = () => {
               Transferência
             </div>
           </Link>
-          <Link to="/transfer" className={home.link}>
+          <Link to="/extrato" className={home.link}>
             <div className={home.gridItem}>
               <MdPayments className={home.ico} />
               Pagamentos
             </div>
           </Link>
-          <Link to="/transfer" className={home.link}>
+          <Link to="/extrato" className={home.link}>
             <div className={home.gridItem}>
               <RiBillFill className={home.ico} />
               Extrato
