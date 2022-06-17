@@ -64,9 +64,12 @@ const FormCadastro = () => {
     watch,
     formState: { errors, dirtyFields },
     control,
+    getValues,
+    setValue,
   } = useForm({ resolver: yupResolver(schma) });
   
   const [checado, setChecado] = useState(null);
+  const [type, setType] = useState("CPF")
 
   const checar = (e) => {
     if (checado === null) {
@@ -96,6 +99,8 @@ const FormCadastro = () => {
       .then(() => {navigate("/FormSenha")})
       .catch((e) => console.log(e));
   }
+
+
   return (<>
     
     <main className="main-form">
@@ -196,9 +201,11 @@ const FormCadastro = () => {
                         {...register("document_type")}
                         type="radio"
                         id="CPF"
+                        onClick={e => setType(e.target.value)}
                         name="document_type"
                         value={"CPF"}
                         checked
+                        
                       />
                       {
                         <div className="form-text" style={{ color: "red" }}>
@@ -215,10 +222,12 @@ const FormCadastro = () => {
                       <input
                         className="form-check-input"
                         {...register("document_type")}
-                        value="CNPJ"
+                        value={"CNPJ"}
+                        onClick={e => setType(e.target.value)}
                         type="radio"
                         id="CNPJ"
                         name="document_type"
+                        
                       />
                       {
                         <div className="form-text" style={{ color: "red" }}>
@@ -230,13 +239,20 @@ const FormCadastro = () => {
                 </div>
               </div>
               <div className="col-12 col-md-5">
-                <InputMask
+              {type ==="CPF" ?  <InputMask
                   mask="999.999.999-99"
                   type="text"
                   {...register("ducument_number")}
                   className="form-control"
                   placeholder="999.999.999-99"
-                />
+                /> :  <InputMask
+                mask="99.99.999/0001-99"
+                type="text"
+                {...register("ducument_number")}
+                className="form-control"
+                placeholder="99.999.999/0001-99"
+              />
+                }
                 {
                   <div className="form-text" style={{ color: "red" }}>
                     {errors.document_number?.message}
