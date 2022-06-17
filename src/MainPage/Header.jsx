@@ -18,6 +18,7 @@ const HeaderLogoImg = styled.img`
   padding: 5px 10px;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 `;
 
 const NavItems = styled.nav`
@@ -35,6 +36,7 @@ const NavItems = styled.nav`
       border-top: 2px solid #d4af37;
       border-bottom: 2px solid #d4af37;
       transition: all ease 0.4s;
+      cursor: pointer;
     }
   }
   @media (max-width: 425px) {
@@ -57,6 +59,7 @@ const NavAncora = styled.a`
 
   &:hover {
     border-bottom: 1px solid #d4af37;
+    color: #d4af37;
   }
 
   @media (max-width: 425px) {

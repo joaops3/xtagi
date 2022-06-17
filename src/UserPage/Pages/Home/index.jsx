@@ -21,7 +21,7 @@ export const Home = () => {
               Transferência
             </div>
           </Link>
-          <Link to="/extrato" className={home.link}>
+          <Link to="/pagamento" className={home.link}>
             <div className={home.gridItem}>
               <MdPayments className={home.ico} />
               Pagamentos
@@ -33,19 +33,19 @@ export const Home = () => {
               Extrato
             </div>
           </Link>
-          <Link to="/transfer" className={home.link}>
+          <Link to="/home" className={home.link}>
             <div className={home.gridItem}>
               <BsCreditCard2BackFill className={home.ico} />
               Crédito
             </div>
           </Link>
-          <Link to="/transfer" className={home.link}>
+          <Link to="/home" className={home.link}>
             <div className={home.gridItem}>
               <BsCurrencyDollar className={home.ico} />
               Conversão
             </div>
           </Link>
-          <Link to="/transfer" className={home.link}>
+          <Link to="/home" className={home.link}>
             <div className={home.gridItem}>
               <BsPiggyBankFill className={home.ico} />
               Cofrinho

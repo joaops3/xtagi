@@ -1,6 +1,8 @@
 import "./Extrato.css";
 import { Header } from "../Header/index";
 
+import ValorExtrato from "./ValorExtrato";
+
 const Extrato = () => {
   return (
     <>
@@ -13,21 +15,11 @@ const Extrato = () => {
             <th className="table-title">Nome</th>
             <th className="table-title">Valor</th>
           </tr>
-          <tr>
-            <td className="table-item">27/02/2000</td>
-            <td className="table-item">alura</td>
-            <td className="table-item">2000</td>
-          </tr>
-          <tr>
-            <td className="table-item">27/02/2000</td>
-            <td className="table-item">alura</td>
-            <td className="table-item">2000</td>
-          </tr>
-          <tr>
-            <td className="table-item">27/02/2000</td>
-            <td className="table-item">alura</td>
-            <td className="table-item">2000</td>
-          </tr>
+          
+          
+         <ValorExtrato date="02/20/2000" name="alura" preco="1000"></ValorExtrato>
+         <ValorExtrato date="02/20/2000" name="alura" preco="1000"></ValorExtrato>
+         <ValorExtrato date="02/20/2000" name="alura" preco="1000"></ValorExtrato>
         </table>
       </section>
     </>

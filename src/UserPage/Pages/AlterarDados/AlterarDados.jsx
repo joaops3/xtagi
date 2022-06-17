@@ -46,18 +46,38 @@ const schma = yup
       ),
     complement: yup.string(),
   })
-  .required();
 
 
-  function alterarDados(dados){
-    api.put("/local", dados )
-  }
+ 
 
 const AlterarDados = () => {
 
-    useEffect( ()=> {
-        api.get("usuario")
-    }, [])
+  
+
+
+  function dados(data){
+    // api.put("/local", dados )
+    
+  }
+ 
+
+     useEffect( ()=> {
+
+       //     axios.get("usuario")
+
+      setValue('name', 'joao')
+      setValue('email', 'joao')
+      setValue("ducument_number", "45285269875")
+      setValue("birth_date", "04/02/2000")
+      setValue("street", "rua imperador")
+      setValue("district", "bairro napoleao")
+      setValue("number", "66")
+      setValue("city", "paris")
+      setValue("estate", "SP")
+      setValue("cep", "152684-52")
+     
+   
+     }, [])
 
     const {
         register,
@@ -65,6 +85,8 @@ const AlterarDados = () => {
         watch,
         formState: { errors, dirtyFields },
         control,
+        getValues,
+        setValue
       } = useForm({ resolver: yupResolver(schma) });
     
     
@@ -75,23 +97,18 @@ const AlterarDados = () => {
    
     <main className="main-form">
       <h1 className="display-1 h1-form">Alteração de dados</h1>
-      <form className="form p-3" onSubmit={handleSubmit(alterarDados)}>
+      <form className="form p-3" onSubmit={handleSubmit(dados)}>
         <div className="container mb-5 shadow-lg p-3 mb-5 bg-body rounded">
           <div className="row">
             <div className="col-12 col-md-5">
               <div className="form-group">
-                <InputMask
-                  formatChars={
-                    {
-                      'a': '[A-Za-z]',
-                    }
-                  }
+                <input
+                 {...register("name")}
                   className="form-control"
-                  value="joao"
                   type="text"
-                  placeholder="Nome"
+                  placeholder="name"
                   readOnly
-                ></InputMask>
+                ></input>
                 {
                   <div className="form-text" style={{ color: "red" }}>
                     {errors.name?.message}
@@ -108,6 +125,7 @@ const AlterarDados = () => {
                   {...register("email")}
                   type="text"
                   placeholder="Email"
+                  
                 ></input>
                 {
                   <div className="form-text" style={{ color: "red" }}>
@@ -142,13 +160,12 @@ const AlterarDados = () => {
           <div className="row">
             <div className="col-12 col-md-5 mt-4">
               <div className="form-group">
-                <InputMask
+              <InputMask
                   mask="99/99/9999"
                   className="form-control"
-                
+                  {...register("birth_date")}
                   type="text"
                   placeholder="Nascimento DD/MM/YYYY"
-                  readOnly
                 ></InputMask>
                 {
                   <div className="form-text" style={{ color: "red" }}>

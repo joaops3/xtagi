@@ -57,7 +57,7 @@ const schma = yup
   .required();
 
 const FormCadastro = () => {
-  //const navigate = useNavigate()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -81,6 +81,7 @@ const FormCadastro = () => {
   };
 
   async function enviar(dados) {
+   
     console.log(dados);
     let dadosStr = JSON.stringify(dados);
     await fetch("", {
@@ -92,6 +93,7 @@ const FormCadastro = () => {
         return resp.json();
       })
       .then((json) => console.log(json))
+      .then(() => {navigate("/FormSenha")})
       .catch((e) => console.log(e));
   }
   return (<>
@@ -466,7 +468,7 @@ const FormCadastro = () => {
               <label class="form-check-label" for="gridCheck">
                 Concordo com os termos de utilização
               </label>
-              {checado == false ? (
+              {checado === false ? (
                 <div className="form-text" style={{ color: "red" }}>
                   Concorde com os termos
                 </div>
@@ -484,7 +486,7 @@ const FormCadastro = () => {
           rules={{
             required: true,
           }}
-          render={({ field }) => (
+          render={({ field, value }) => (
             <InputMask
               mask="999.999.999.99"
               maskChar=""
