@@ -7,6 +7,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputMask, { MaskedInput } from "react-input-mask";
 import { Header } from "../MainPage/Header";
+import axios from "axios"
+
 const schma = yup
   .object({
     name: yup.string().required("Campo obrigatorio"),
@@ -66,6 +68,7 @@ const FormCadastro = () => {
     control,
     getValues,
     setValue,
+    setFocus,
   } = useForm({ resolver: yupResolver(schma) });
   
   const [checado, setChecado] = useState(null);
@@ -84,7 +87,6 @@ const FormCadastro = () => {
   };
 
   async function enviar(dados) {
-   
     console.log(dados);
     let dadosStr = JSON.stringify(dados);
     await fetch("", {
@@ -98,6 +100,22 @@ const FormCadastro = () => {
       .then((json) => console.log(json))
       .then(() => {navigate("/FormSenha")})
       .catch((e) => console.log(e));
+  }
+
+  async function checkCep(cep){
+    if(cep ===""){
+      return
+    }
+    const realCep = cep.replace(/\D/g, "")
+    const req = await axios(`https://viacep.com.br/ws/${realCep}/json/`)
+      .then((req) => req.data)
+      .then(json => {
+        setValue("street", json.logradouro);
+        setValue("district", json.bairro);
+        setValue("city", json.localidade);
+        setValue("estate", json.uf);
+        setValue("complement", json.complemento);
+      })
   }
 
 
@@ -451,6 +469,7 @@ const FormCadastro = () => {
                 id="inputZip"
                 name="cep"
                 placeholder="00000-00"
+                onBlur={(e) => checkCep(e.target.value)}
               />
               {
                 <div className="form-text" style={{ color: "red" }}>
