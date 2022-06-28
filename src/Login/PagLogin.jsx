@@ -1,9 +1,10 @@
-import { useState, useContext } from "react";
 import "./PagLogin.css";
+import { useState, useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../MainPage/Header";
-import { string } from "yup";
+import { useEffect } from "react";
+import { getUserLocalStore } from "../hooks/Api";
 const PagLogin = () => {
   const [email, setEmail] = useState("");
   const [password, SetPassword] = useState("");
@@ -14,8 +15,17 @@ const PagLogin = () => {
   async function handleLogin(e) {
     e.preventDefault();
     signin(email, password);
-    navigate("/home");
+    navigate("/profile");
   }
+
+  useEffect(()=>{
+    const user = getUserLocalStore()
+    if(!user){
+      return
+    }
+    navigate("/profile")
+
+  })
 
 
   // {

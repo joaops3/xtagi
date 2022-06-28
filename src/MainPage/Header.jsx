@@ -79,7 +79,7 @@ export const Header = () => {
         <NavAncora href="#BeneSection">Benefícios</NavAncora>
         <NavAncora href="#AppSection">Aplicativo</NavAncora>
         <NavAncora className="signIn" onClick={() => navigate("/PagLogin")}>logar</NavAncora>
-        <NavAncora className="signUp"  onClick={() => navigate("/FormCadastro")}>Criar conta</NavAncora>
+        <NavAncora className="signUp"  onClick={() => navigate("/cadastro")}>Criar conta</NavAncora>
       </NavItems>
     </HeaderContainer>
   );

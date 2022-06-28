@@ -1,6 +1,6 @@
 import axios from "axios"
-
 export const api = axios.create({baseURL: "https://reqres.in/api/",})
+
 
 
 
@@ -8,6 +8,7 @@ export const setUserLocalStore = (user) => {
     localStorage.setItem("u", JSON.stringify(user))
 
 }
+
 
 export const getUserLocalStore = () => {
     const json = localStorage.getItem("u")

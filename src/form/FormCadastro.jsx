@@ -98,7 +98,7 @@ const FormCadastro = () => {
         return resp.json();
       })
       .then((json) => console.log(json))
-      .then(() => {navigate("/FormSenha")})
+      .then(() => {navigate("/cadastro/FormSenha")})
       .catch((e) => console.log(e));
   }
 

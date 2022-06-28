@@ -29,13 +29,13 @@ export const Header = () => {
   return (
     <>
       <div className={header.container}>
-       <Link to="/home"> <img src={Logo} className={header.logo} /></Link>
+       <Link to="/profile"> <img src={Logo} className={header.logo} /></Link>
         <div onClick={ShowConfigFunction}>
           <BsPersonCircle className={header.personCircle} />
           <BsCaretDownFill className={header.caretDown} />
           {showConfig ? (
             <div className={header.ConfigArea}>
-              <Link to="/alterar" className={header.ConfigAreaItem}>
+              <Link to="/profile/alterar" className={header.ConfigAreaItem}>
                 Alteração de Dados.
               </Link>
               <a href="#" onClick={() =>logout()} className={header.ConfigAreaItem}>

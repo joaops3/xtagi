@@ -55,16 +55,14 @@ const AlterarDados = () => {
   
 
 
-  function dados(data){
-    // api.put("/local", dados )
+  function novosDados(data){
+    // axios.put("/local", data )
     
   }
  
 
      useEffect( ()=> {
-
        //     axios.get("usuario")
-
       setValue('name', 'joao')
       setValue('email', 'joao')
       setValue("ducument_number", "45285269875")
@@ -97,7 +95,7 @@ const AlterarDados = () => {
    
     <main className="main-form">
       <h1 className="display-1 h1-form">Alteração de dados</h1>
-      <form className="form p-3" onSubmit={handleSubmit(dados)}>
+      <form className="form p-3" onSubmit={handleSubmit(novosDados)}>
         <div className="container mb-5 shadow-lg p-3 mb-5 bg-body rounded">
           <div className="row">
             <div className="col-12 col-md-5">

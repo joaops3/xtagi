@@ -15,37 +15,37 @@ export const Home = () => {
     <Header></Header>
       <div className={home.container}>
         <div className={home.grid}>
-          <Link to="/transfer" className={home.link}>
+          <Link to="/profile/transfer" className={home.link}>
             <div className={home.gridItem}>
               <BiTransferAlt className={home.ico} />
               Transferência
             </div>
           </Link>
-          <Link to="/pagamento" className={home.link}>
+          <Link to="/profile/pagamento" className={home.link}>
             <div className={home.gridItem}>
               <MdPayments className={home.ico} />
               Pagamentos
             </div>
           </Link>
-          <Link to="/extrato" className={home.link}>
+          <Link to="/profile/extrato" className={home.link}>
             <div className={home.gridItem}>
               <RiBillFill className={home.ico} />
               Extrato
             </div>
           </Link>
-          <Link to="/home" className={home.link}>
+          <Link to="/profile" className={home.link}>
             <div className={home.gridItem}>
               <BsCreditCard2BackFill className={home.ico} />
               Crédito
             </div>
           </Link>
-          <Link to="/home" className={home.link}>
+          <Link to="/profile" className={home.link}>
             <div className={home.gridItem}>
               <BsCurrencyDollar className={home.ico} />
               Conversão
             </div>
           </Link>
-          <Link to="/home" className={home.link}>
+          <Link to="/profile" className={home.link}>
             <div className={home.gridItem}>
               <BsPiggyBankFill className={home.ico} />
               Cofrinho
